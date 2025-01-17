@@ -36,6 +36,12 @@ function generateThumbnails() {
     imgElm.addEventListener("click", function () {
       document.getElementById("background").src = imgElm.src;
     });
+
+    imgElm.addEventListener("keydown", function () {
+      if (event.key == "Enter") {
+        document.getElementById("background").src = imgElm.src;
+      }
+    });
   });
 }
 

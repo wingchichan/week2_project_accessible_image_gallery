@@ -1,18 +1,42 @@
-img {
-  width: 150px;
-  height: 100px;
-}
-
 #background {
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
+  object-fit: cover;
 }
 
 #thumbnail {
-  left: 400px;
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+  margin-inline: auto;
+  width: fit-content;
   z-index: 1;
   position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  overflow-x: scroll;
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  gap: 5px;
+}
+
+#thumbnail img {
+  width: 100px;
+  height: 60px;
+}
+
+@media (min-width: 800px) {
+  #thumbnail {
+    padding: 10px;
+  }
+
+  #thumbnail img {
+    width: 150px;
+    height: 80px;
+  }
 }
