@@ -28,12 +28,13 @@ function generateThumbnails() {
     const imgElm = document.createElement("img");
     imgElm.src = object.src;
     imgElm.alt = object.alt;
+    imgElm.tabIndex = 0;
 
     document.getElementById("thumbnail").append(imgElm);
 
     // add event listener to each image
     imgElm.addEventListener("click", function () {
-      document.getElementById("image").src = object.src;
+      document.getElementById("background").src = imgElm.src;
     });
   });
 }

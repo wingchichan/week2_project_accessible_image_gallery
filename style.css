@@ -4,11 +4,15 @@ img {
 }
 
 #background {
-  position: fixed;
-  height: 100vh;
-}
-
-#image {
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#thumbnail {
+  left: 400px;
+  z-index: 1;
+  position: absolute;
 }
