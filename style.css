@@ -2,3 +2,13 @@ img {
   width: 150px;
   height: 100px;
 }
+
+#background {
+  position: fixed;
+  height: 100vh;
+}
+
+#image {
+  width: 100vw;
+  height: 100vh;
+}
