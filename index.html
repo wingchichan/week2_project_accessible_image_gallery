@@ -8,11 +8,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="thumbnail"></div>
-    <img tabindex="0" id="background" />
+    <div id="thumbnail" aria-label="Thumbnail of all images"></div>
+    <img tabindex="0" aria-label="Image displayed in full" id="background" />
     <div id="controlbuttons">
-      <button id="backbutton">Back</button>
-      <button id="nextbutton">Next</button>
+      <button tabindex="0" aria-label="Back to previous image" id="backbutton">
+        Back
+      </button>
+      <button tabindex="0" aria-label="Go to next image" id="nextbutton">
+        Next
+      </button>
     </div>
   </body>
 </html>
