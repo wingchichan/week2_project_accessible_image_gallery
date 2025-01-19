@@ -41,11 +41,12 @@
   }
 }
 
-nextbutton {
-  position: absolute;
-}
-
-backbutton {
-  position: absolute;
-  top: 50px;
+#controlbuttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 400px;
+  margin-left: 100px;
+  margin-right: 100px;
+  position: relative;
 }

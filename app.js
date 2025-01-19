@@ -18,6 +18,7 @@ const imageArray = [
 ];
 
 let currentIndex = 0;
+const maxImageIndex = imageArray.length - 1;
 
 function generateThumbnails() {
   // to display each image in the array
@@ -54,18 +55,23 @@ generateThumbnails();
 // add event listener
 // when event happens skip to next photo
 
-const nextButton = document.getElementById("nextbutton");
-nextButton.addEventListener("click", function () {
-  currentIndex += 1;
-  let currentImage = imageArray[currentIndex];
-  document.getElementById("background").src = currentImage.src;
-});
-
 const backButton = document.getElementById("backbutton");
-nextButton.addEventListener("click", function () {
+backButton.addEventListener("click", function () {
   currentIndex -= 1;
   let currentImage = imageArray[currentIndex];
   document.getElementById("background").src = currentImage.src;
 });
 
-// if current index < array length then reset to 0
+const nextButton = document.getElementById("nextbutton");
+nextButton.addEventListener("click", function () {
+  if (currentIndex == maxImageIndex) {
+    currentIndex = 0;
+    let currentImage = imageArray[currentIndex];
+    document.getElementById("background").src = currentImage.src;
+  } else {
+    currentIndex += 1;
+    let currentImage = imageArray[currentIndex];
+    document.getElementById("background").src = currentImage.src;
+  }
+  // if current index < array length then reset to 0
+});
