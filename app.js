@@ -17,13 +17,15 @@ const imageArray = [
   },
 ];
 
+let currentIndex = 0;
+
 function generateThumbnails() {
   // to display each image in the array
   // for every object in the imageArray
   // create an img element tag in the document and store that in imgElm variable
   // link the variable src and alt to the src and alt in the array objects
   // append each variable to the body of the document
-  imageArray.forEach(function (object) {
+  imageArray.forEach(function (object, index) {
     // create tag <img />
     const imgElm = document.createElement("img");
     imgElm.src = object.src;
@@ -34,15 +36,36 @@ function generateThumbnails() {
 
     // add event listener to each image
     imgElm.addEventListener("click", function () {
-      document.getElementById("background").src = imgElm.src;
+      document.getElementById("background").src = object.src;
+      currentIndex = index;
     });
 
     imgElm.addEventListener("keydown", function () {
       if (event.key == "Enter") {
-        document.getElementById("background").src = imgElm.src;
+        document.getElementById("background").src = object.src;
       }
     });
   });
 }
 
 generateThumbnails();
+
+// access the button
+// add event listener
+// when event happens skip to next photo
+
+const nextButton = document.getElementById("nextbutton");
+nextButton.addEventListener("click", function () {
+  currentIndex += 1;
+  let currentImage = imageArray[currentIndex];
+  document.getElementById("background").src = currentImage.src;
+});
+
+const backButton = document.getElementById("backbutton");
+nextButton.addEventListener("click", function () {
+  currentIndex -= 1;
+  let currentImage = imageArray[currentIndex];
+  document.getElementById("background").src = currentImage.src;
+});
+
+// if current index < array length then reset to 0

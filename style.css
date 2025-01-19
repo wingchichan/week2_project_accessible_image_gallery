@@ -40,3 +40,12 @@
     height: 80px;
   }
 }
+
+nextbutton {
+  position: absolute;
+}
+
+backbutton {
+  position: absolute;
+  top: 50px;
+}
