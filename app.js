@@ -67,7 +67,7 @@ generateThumbnails();
 const backButton = document.getElementById("backbutton");
 backButton.addEventListener("click", function () {
   if (currentIndex == 0) {
-    return;
+    currentIndex = maxImageIndex + 1;
   }
   currentIndex -= 1;
   let currentImage = imageArray[currentIndex];
