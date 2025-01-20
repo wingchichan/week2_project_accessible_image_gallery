@@ -15,6 +15,10 @@ const imageArray = [
     src: "assets/image4.jpeg",
     alt: "4 teepees in twilight sun",
   },
+  {
+    src: "assets/image5.jpeg",
+    alt: "Pena Palace in Sintra, Lisbon",
+  },
 ];
 
 let currentIndex = 0;
@@ -44,11 +48,16 @@ function generateThumbnails() {
     imgElm.addEventListener("keydown", function () {
       if (event.key == "Enter") {
         document.getElementById("background").src = object.src;
+        currentIndex = index;
       }
     });
   });
 }
 
+function showImage() {
+  document.getElementById("background").src = imageArray[0].src;
+}
+showImage();
 generateThumbnails();
 
 // access the button
@@ -57,6 +66,9 @@ generateThumbnails();
 
 const backButton = document.getElementById("backbutton");
 backButton.addEventListener("click", function () {
+  if (currentIndex == 0) {
+    return;
+  }
   currentIndex -= 1;
   let currentImage = imageArray[currentIndex];
   document.getElementById("background").src = currentImage.src;
